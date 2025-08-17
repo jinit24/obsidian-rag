@@ -2,6 +2,66 @@
 
 A simple, fast RAG system for Obsidian vaults using RDBMS for exact matching and LLM for query parsing.
 
+## 🚀 Quick Start
+
+### 1. Setup (5 minutes)
+```bash
+# Install dependencies
+pip install -r requirements.txt
+
+# Install Ollama and pull model
+ollama pull llama3.2:3b
+
+# Update config.yaml with Obsidian Vault path
+```
+
+### 2. Try it out!
+
+**Interactive Search:**
+This is to search and ask questions about content in your vault.
+```bash
+python main.py rag
+
+# Sample queries to try:
+>>> "What did I do in January 2025?"
+>>> "Find documents tagged work" 
+>>> "Notes about machine learning"
+>>> "What do I know about Python?"
+```
+
+**Enhance Your Documents:**
+This is to enhance the existing documents with info on `tags`, `title`, `description`, and `created`
+```bash
+# Add AI-generated frontmatter to 5 files (test)
+python main.py enrich --max-files 5
+
+# Process all documents with 8 parallel workers
+python main.py enrich --max-workers 8
+```
+
+### 3. Expected Output
+
+**Search Example:**
+```
+Question: what do I know about K8s?
+📝 Found 3 documents about Kubernetes cluster setup, pod management, and deployment strategies...
+```
+
+**Enrichment Example:**
+```yaml
+---
+created: '2025-01-15'
+description: Notes on Kubernetes cluster configuration and container orchestration
+tags:
+- kubernetes
+- k8s
+- containers
+- devops
+- orchestration
+title: Kubernetes Cluster Setup Guide
+---
+```
+
 ## 🚀 Features
 
 ### Search Capabilities
