@@ -1,0 +1,37 @@
+# RAG Obsidian Configuration
+# Configuration file for the RDBMS-based RAG system for Obsidian notes
+
+# Paths Configuration
+paths:
+  # Path to your Obsidian vault (use forward slashes even on Windows)
+  vault_path: "/Users/jshah/Documents/Confluent/Obsidian"
+  
+  # Path for SQLite metadata database
+  metadata_db_path: "./obsidian_metadata.db"
+
+# Model Configuration
+models:
+  # Ollama LLM model name (must be pulled locally)
+  llm_model: "llama3.2:3b"
+  
+  # LLM request timeout in seconds
+  llm_timeout: 120.0
+
+# Search Configuration
+search:
+  # Maximum number of documents to show in results
+  max_rdbms_results: 100
+  
+  # Content preview length for database storage (characters)
+  content_preview_length: 1000
+
+# Processing Configuration
+processing:
+  # File extensions to process
+  file_extensions: [".md"]
+  
+  # Whether to process files recursively in subdirectories
+  recursive: true
+  
+  # Maximum file size to process (in MB, 0 = no limit)
+  max_file_size_mb: 10

@@ -1,0 +1,17 @@
+# Core dependencies (Python 3.12+ compatible)
+llama-index-core>=0.11.0
+llama-index-llms-ollama>=0.3.0
+llama-index-embeddings-ollama>=0.2.0
+llama-index-vector-stores-chroma>=0.2.0
+llama-index-readers-file>=0.4.0
+
+# Data processing
+PyYAML==6.0.1
+
+# Testing
+pytest==7.4.3
+
+# Utilities
+pathlib2==2.3.7
+typer[all]==0.16.0
+tqdm>=4.62.3
